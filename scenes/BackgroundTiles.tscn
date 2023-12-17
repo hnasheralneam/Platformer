@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1ixqd4o6e32g"]
 
-[ext_resource type="PackedScene" uid="uid://l8j8t5llytj" path="res://Tilemap.tscn" id="1_gby76"]
+[ext_resource type="PackedScene" uid="uid://l8j8t5llytj" path="res://scenes/Tilemap.tscn" id="1_gby76"]
 
 [node name="BackgroundTiles" type="TileMap"]
 format = 2

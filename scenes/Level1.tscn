@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dafcbv5qyq0n3"]
+
+[ext_resource type="Texture2D" uid="uid://m37yesfdp1ka" path="res://assets/background.png" id="1_8m5fr"]
+[ext_resource type="PackedScene" uid="uid://1ixqd4o6e32g" path="res://scenes/BackgroundTiles.tscn" id="2_2fawk"]
+[ext_resource type="PackedScene" uid="uid://l8j8t5llytj" path="res://scenes/Tilemap.tscn" id="3_2vwxb"]
+[ext_resource type="PackedScene" uid="uid://cgg3w2wmpbs3" path="res://scenes/Player.tscn" id="4_gkp61"]
+[ext_resource type="PackedScene" uid="uid://c33li86fiags3" path="res://scenes/Coin.tscn" id="5_byk2e"]
+[ext_resource type="PackedScene" uid="uid://24o5mnl2dyep" path="res://scenes/LevelBorder.tscn" id="6_ttx5u"]
+[ext_resource type="PackedScene" uid="uid://cbjsvyt4avune" path="res://scenes/HUD.tscn" id="7_dkbbo"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(597, 358)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -928.0
+offset_top = -678.0
+offset_right = 992.0
+offset_bottom = 402.0
+texture = ExtResource("1_8m5fr")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTiles" parent="." instance=ExtResource("2_2fawk")]
+position = Vector2(-189, 10)
+
+[node name="Platforms" parent="." instance=ExtResource("3_2vwxb")]
+position = Vector2(3, 10)
+layer_0/tile_data = PackedInt32Array(196607, 393216, 3, 131072, 393216, 3, 131073, 393216, 3, 131074, 393216, 3, 131075, 393216, 3, 131076, 393216, 3, 131077, 458752, 3, 196606, 327680, 3, 131069, 393216, 3, 131068, 393216, 3, 131067, 393216, 3, 131070, 458752, 3, 131066, 393216, 3, 131065, 327680, 3, -65536, 524288, 3, -65534, 524288, 3, -131068, 524288, 3)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_gkp61")]
+position = Vector2(-245, -38)
+scale = Vector2(1.6791, 1.97861)
+SPEED = 350.0
+JUMP_VELOCITY = -525.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Coin" parent="." instance=ExtResource("5_byk2e")]
+position = Vector2(35, -94)
+
+[node name="Coin1" parent="." instance=ExtResource("5_byk2e")]
+position = Vector2(275, 98)
+
+[node name="Coin2" parent="." instance=ExtResource("5_byk2e")]
+position = Vector2(-381, 34)
+
+[node name="LevelBorder" parent="." instance=ExtResource("6_ttx5u")]
+position = Vector2(-213, 282)
+
+[node name="HUD" parent="." instance=ExtResource("7_dkbbo")]

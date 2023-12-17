@@ -1,4 +1,6 @@
-extends Area2D
+extends Node
+
+var coins: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -6,12 +8,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-
-func _on_body_entered(body):
-	body.in_water = true
-	
-func _on_body_exited(body):
-	body.in_water = false
+func add_coin():
+	coins += 1
+	get_tree().get_root().get_node("Level1").get_node("HUD").get_node("Score").text = "Score: " + str(coins)
