@@ -9,7 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_collision_shape_2d_child_entered_tree(node):
-	$Sprite2D.flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dafcbv5qyq0n3"]
+[gd_scene load_steps=8 format=3 uid="uid://dafcbv5qyq0n3"]
 
 [ext_resource type="Texture2D" uid="uid://m37yesfdp1ka" path="res://assets/background.png" id="1_w403x"]
 [ext_resource type="PackedScene" uid="uid://1ixqd4o6e32g" path="res://BackgroundTiles.tscn" id="2_47f5q"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgg3w2wmpbs3" path="res://Player.tscn" id="3_nye60"]
 [ext_resource type="PackedScene" uid="uid://c33li86fiags3" path="res://Coin.tscn" id="5_4jww0"]
 [ext_resource type="PackedScene" uid="uid://24o5mnl2dyep" path="res://LevelBorder.tscn" id="6_wm2f7"]
+[ext_resource type="PackedScene" uid="uid://cbjsvyt4avune" path="res://UI.tscn" id="7_vggs0"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(597, 358)
@@ -44,3 +45,5 @@ position = Vector2(-381, 34)
 
 [node name="LevelBorder" parent="." instance=ExtResource("6_wm2f7")]
 position = Vector2(-213, 282)
+
+[node name="Container" parent="." instance=ExtResource("7_vggs0")]

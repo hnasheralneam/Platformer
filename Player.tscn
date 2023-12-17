@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgg3w2wmpbs3"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_mwwml"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_mwwml"]
 [ext_resource type="Texture2D" uid="uid://dtch47ydv5x5p" path="res://assets/new-squirrel.svg" id="2_dfdfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hy7v"]
