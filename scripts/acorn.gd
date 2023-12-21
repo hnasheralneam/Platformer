@@ -1,4 +1,7 @@
-extends Area2D
+extends Sprite2D
+
+var bobbing_speed = 10.0
+var bobbing_amplitude = 50.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -6,11 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _process(delta):
+	position.y = sin(get_process_delta_time() * bobbing_speed) * bobbing_amplitude
 
 
-func _on_body_entered(body):
-	if body.type == "player":
-		CoinCounter.add_coin()
-		queue_free()

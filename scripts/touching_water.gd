@@ -11,7 +11,10 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
-	body.in_water = true
+	if body.type == "player":
+		body.in_water = true
+		body.kill_player()
 	
 func _on_body_exited(body):
-	body.in_water = false
+	if body.type == "player":
+		body.in_water = false

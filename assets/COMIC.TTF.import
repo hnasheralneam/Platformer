@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ccuifc20uxlij"
-path="res://.godot/imported/COMIC.TTF-c49fc24c15f88ab43b399a33b7ac7d92.fontdata"
+path="res://.godot/imported/comic.ttf-b9811063eb902f212f8f54643912dc23.fontdata"
 
 [deps]
 
-source_file="res://assets/COMIC.TTF"
-dest_files=["res://.godot/imported/COMIC.TTF-c49fc24c15f88ab43b399a33b7ac7d92.fontdata"]
+source_file="res://assets/comic.ttf"
+dest_files=["res://.godot/imported/comic.ttf-b9811063eb902f212f8f54643912dc23.fontdata"]
 
 [params]
 

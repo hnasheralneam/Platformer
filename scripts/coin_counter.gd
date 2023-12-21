@@ -14,3 +14,6 @@ func _process(_delta):
 func add_coin():
 	coins += 1
 	get_tree().get_root().get_node("Level1").get_node("HUD").get_node("Score").text = "Score: " + str(coins)
+
+func get_coins():
+	return coins
