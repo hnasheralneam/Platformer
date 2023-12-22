@@ -12,5 +12,6 @@ func _process(delta):
 
 
 func _on_pressed():
+	CoinCounter.clear_coins()
 	get_tree().reload_current_scene()
 	get_parent().get_parent().visible = false
