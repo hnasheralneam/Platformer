@@ -17,7 +17,9 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 CoinCounter="*res://scripts/coin_counter.gd"
+PlayerDirection="*res://scripts/player_direction.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"

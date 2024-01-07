@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
+@export var FIREBALL_COOLDOWN = 500
+var last_fireball_shot = Time.get_ticks_msec()
 var in_water: bool = false
 var type: String = "player"
 
 	
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var Bullet = preload("res://scenes/Bullet.tscn")
+var Fireball = preload("res://scenes/Fireball.tscn")
 
 func _physics_process(delta):
 	if in_water:
@@ -40,8 +42,10 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED * .6
 
 		if (direction < 0):
+			PlayerDirection.turn_left()
 			$Sprite2D.flip_h = true
 		else:
+			PlayerDirection.turn_right()
 			$Sprite2D.flip_h = false
 
 	else:
@@ -52,6 +56,10 @@ func _physics_process(delta):
 
 
 func shoot():
-	var b = Bullet.instantiate()
-	owner.add_child(b)
-	b.set_global_position($Marker2D.get_global_position())
+	print(Time.get_ticks_msec())
+	print(last_fireball_shot + FIREBALL_COOLDOWN)
+	if (Time.get_ticks_msec() > last_fireball_shot + FIREBALL_COOLDOWN):
+		var b = Fireball.instantiate()
+		owner.add_child(b)
+		b.set_global_position($Marker2D.get_global_position())
+		last_fireball_shot = Time.get_ticks_msec()
