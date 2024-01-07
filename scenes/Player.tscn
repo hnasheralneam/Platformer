@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgg3w2wmpbs3"]
+
+[ext_resource type="Script" path="res://scripts/player_status.gd" id="1_d8tnd"]
+[ext_resource type="Texture2D" uid="uid://dgigr13lole7m" path="res://assets/squirrel.svg" id="2_grjab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hy7v"]
+size = Vector2(32.1758, 35.0423)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(0, 1)
+scale = Vector2(1.36, 1.6064)
+script = ExtResource("1_d8tnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.171945, -0.226074)
+scale = Vector2(0.9598, 0.870463)
+shape = SubResource("RectangleShape2D_0hy7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.171947, 0.396435)
+scale = Vector2(0.0468436, 0.0408166)
+texture = ExtResource("2_grjab")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(111.765, -34.8606)

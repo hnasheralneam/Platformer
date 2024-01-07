@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ixqd4o6e32g"]
+
+[ext_resource type="PackedScene" uid="uid://l8j8t5llytj" path="res://scenes/Tilemap.tscn" id="1_gby76"]
+
+[node name="BackgroundTiles" type="TileMap"]
+format = 2
+
+[node name="Tilemap" parent="." instance=ExtResource("1_gby76")]
+modulate = Color(1, 1, 1, 0.721569)
+visibility_layer = 129
+layer_0/tile_data = PackedInt32Array(65533, 655360, 3, 1, 720896, 2, -131067, 589824, 3, 65541, 720896, 2, 65544, 655360, 3)

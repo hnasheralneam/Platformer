@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjsvyt4avune"]
+
+[ext_resource type="Script" path="res://scripts/restart.gd" id="1_2il7f"]
+[ext_resource type="FontFile" uid="uid://ccuifc20uxlij" path="res://assets/COMIC.TTF" id="2_ryei3"]
+[ext_resource type="Texture2D" uid="uid://361nl16nj7at" path="res://assets/acorn.svg" id="3_mq3ej"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="GameOverMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="GameOverMenu"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 264.0
+offset_right = 648.0
+offset_bottom = 384.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.156863)
+
+[node name="Attribution" type="Label" parent="GameOverMenu"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 394.0
+offset_right = 941.0
+offset_bottom = 417.0
+text = "<a href=\"https://www.vecteezy.com/free-vector/asteroid\">Fireball img by Vecteezy</a>"
+
+[node name="Items" type="VBoxContainer" parent="GameOverMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 497.5
+offset_top = 261.5
+offset_right = 614.5
+offset_bottom = 346.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Message" type="Label" parent="GameOverMenu/Items"]
+layout_mode = 2
+text = "You died :/"
+
+[node name="FinalScore" type="Label" parent="GameOverMenu/Items"]
+layout_mode = 2
+text = "Final score is: 0"
+
+[node name="RestartButton" type="Button" parent="GameOverMenu/Items"]
+layout_mode = 2
+text = "try again"
+script = ExtResource("1_2il7f")
+
+[node name="ScoreLabelBg" type="ColorRect" parent="."]
+offset_right = 144.0
+offset_bottom = 32.0
+color = Color(0, 0, 0, 0.156863)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 24.0
+offset_right = 100.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_ryei3")
+theme_override_font_sizes/font_size = 19
+text = "Score: 0"
+
+[node name="Acorn" type="Sprite2D" parent="."]
+position = Vector2(128, 16)
+scale = Vector2(0.0996241, 0.099624)
+texture = ExtResource("3_mq3ej")
+
+[connection signal="pressed" from="GameOverMenu/Items/RestartButton" to="GameOverMenu/Items/RestartButton" method="_on_pressed"]

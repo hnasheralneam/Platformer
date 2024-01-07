@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c33li86fiags3"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_4bixu"]
+[ext_resource type="Texture2D" uid="uid://361nl16nj7at" path="res://assets/acorn.svg" id="1_7c4k0"]
+[ext_resource type="Script" path="res://scripts/acorn.gd" id="3_q5j5b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q1o3"]
+radius = 9.12698
+height = 25.8621
+
+[node name="Coin" type="Area2D"]
+scale = Vector2(0.698611, 0.698611)
+script = ExtResource("1_4bixu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.52, 2.32)
+shape = SubResource("CapsuleShape2D_3q1o3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_7c4k0")
+script = ExtResource("3_q5j5b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

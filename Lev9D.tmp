@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://24o5mnl2dyep"]
+
+[ext_resource type="PackedScene" uid="uid://l8j8t5llytj" path="res://Tilemap.tscn" id="1_k6xcv"]
+[ext_resource type="Script" path="res://TouchingWater.gd" id="2_0ovnr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ebq"]
+size = Vector2(1280, 128)
+
+[node name="LevelBorder" type="TileMap"]
+format = 2
+
+[node name="Tilemap" parent="." instance=ExtResource("1_k6xcv")]
+layer_0/tile_data = PackedInt32Array(131065, 786432, 10, 131066, 786432, 10, 131067, 786432, 10, 131068, 786432, 10, 131069, 786432, 10, 131070, 786432, 10, 131071, 786432, 10, 65536, 786432, 10, 65537, 786432, 10, 65538, 786432, 10, 65539, 786432, 10, 65540, 786432, 10, 65541, 786432, 10, 65542, 786432, 10, 65543, 786432, 10, 65544, 786432, 10, 65545, 786432, 10, 65546, 786432, 10, 65547, 786432, 10, 65548, 786432, 10, 196601, 786432, 11, 196602, 786432, 11, 196603, 786432, 11, 196604, 786432, 11, 196605, 786432, 11, 196606, 786432, 11, 196607, 786432, 11, 131072, 786432, 11, 131073, 786432, 11, 131074, 786432, 11, 131075, 786432, 11, 131076, 786432, 11, 131077, 786432, 11, 131078, 786432, 11, 131079, 786432, 11, 131080, 786432, 11, 131081, 786432, 11, 131082, 786432, 11, 131083, 786432, 11, 131084, 786432, 11)
+
+[node name="WaterArea" type="Area2D" parent="."]
+script = ExtResource("2_0ovnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(192, 128)
+shape = SubResource("RectangleShape2D_t2ebq")
+
+[connection signal="body_entered" from="WaterArea" to="WaterArea" method="_on_body_entered"]
